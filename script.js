@@ -42,17 +42,17 @@ document.addEventListener('DOMContentLoaded', function() {
     async function loadCarouselImages() {
         try {
             const imageFiles = [
-                {name: 'image1.webp', alt: 'Commercial door installation'},
-                {name: 'image2.webp', alt: 'Residential door repair'},
+                {name: 'image1.webp', alt: 'Residential door installation'},
+                {name: 'image2.webp', alt: 'Commercial door installation'},
                 {name: 'image3.webp', alt: 'Custom door solution'},
                 {name: 'image4.webp', alt: 'Automatic door system'},
-                {name: 'image5.webp', alt: 'Door frame repair'},
-                {name: 'image6.webp', alt: 'Glass door installation'},
+                {name: 'image5.webp', alt: 'Residential door installation'},
+                {name: 'image6.webp', alt: 'Residential door installation'},
                 {name: 'image7.webp', alt: 'Sliding door repair'},
-                {name: 'image8.webp', alt: 'Commercial entry doors'},
-                {name: 'image9.webp', alt: 'Commercial entry doors'},
-                {name: 'image10.webp', alt: 'Commercial entry doors'},
-                {name: 'image11.webp', alt: 'Commercial entry doors'},
+                {name: 'image8.webp', alt: 'Commercial door installation'},
+                {name: 'image9.webp', alt: 'Commercial door installation'},
+                {name: 'image10.webp', alt: 'Commercial door installation'},
+                {name: 'image11.webp', alt: 'Residential door installation'},
                 {name: 'image12.webp', alt: 'Commercial entry doors'},
                 {name: 'image13.webp', alt: 'Commercial entry doors'},
                 {name: 'image14.webp', alt: 'Commercial entry doors'},
@@ -61,7 +61,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 {name: 'image17.webp', alt: 'Commercial entry doors'},
                 {name: 'image18.webp', alt: 'Commercial entry doors'},
                 {name: 'image19.webp', alt: 'Commercial entry doors'},
-                {name: 'image20.webp', alt: 'Commercial entry doors'}
+                {name: 'image20.webp', alt: 'Commercial entry doors'},
+                {name: 'image21.webp', alt: 'Commercial entry doors'},
+                {name: 'image22.webp', alt: 'Commercial entry doors'},
+                {name: 'image23.webp', alt: 'Commercial entry doors'},
+                {name: 'image24.webp', alt: 'Commercial entry doors'},
+                {name: 'image25.webp', alt: 'Commercial entry doors'},
+                {name: 'image26.webp', alt: 'Commercial entry doors'},
+                {name: 'image27.webp', alt: 'Commercial entry doors'},
+                {name: 'image28.webp', alt: 'Commercial entry doors'},
+                {name: 'image29.webp', alt: 'Commercial entry doors'},
+                {name: 'image30.webp', alt: 'Commercial entry doors'},
+                {name: 'image31.webp', alt: 'Commercial entry doors'},
+                {name: 'image32.webp', alt: 'Commercial entry doors'},
+                {name: 'image33.webp', alt: 'Commercial entry doors'},
+                {name: 'image34.webp', alt: 'Commercial entry doors'},
+                {name: 'image35.webp', alt: 'Commercial entry doors'},
+
             ];
             
             // Clear existing content
@@ -216,13 +232,120 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start loading the carousel images
     loadCarouselImages();
     
-    // Form submission
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will contact you soon.');
-            this.reset();
-        });
-    }
+    // // Form submission
+    // const contactForm = document.getElementById('contactForm');
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', function(e) {
+    //         e.preventDefault();
+    //         alert('Thank you for your message! We will contact you soon.');
+    //         this.reset();
+    //     });
+    // }
+
+    
+
 });
+
+  /* Testimonials Section */
+
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.testimonials-track');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const dotsContainer = document.querySelector('.slider-dots');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    
+    let currentIndex = 0;
+    let visibleCards = getVisibleCards();
+    let totalSlides = Math.ceil(cards.length / visibleCards);
+    
+    // Función para calcular cards visibles
+    function getVisibleCards() {
+      return window.innerWidth >= 992 ? 2 : 1;
+    }
+    
+    // Función para actualizar totalSlides cuando cambia el tamaño
+    function updateTotalSlides() {
+      visibleCards = getVisibleCards();
+      totalSlides = Math.ceil(cards.length / visibleCards);
+      createDots();
+      updateSlider();
+    }
+    
+    // Crear dots basado en totalSlides
+    function createDots() {
+      dotsContainer.innerHTML = ''; // Limpiar dots existentes
+      
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', `Ir al testimonio ${i + 1}`);
+        dot.addEventListener('click', () => goToSlide(i * visibleCards));
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateSlider() {
+      const cardWidth = cards[0].offsetWidth + (window.innerWidth >= 992 ? 32 : 0);
+      track.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
+      
+      // Actualizar dots
+      const dots = document.querySelectorAll('.slider-dots button');
+      const currentDot = Math.floor(currentIndex / visibleCards);
+      
+      dots.forEach((dot, index) => {
+        dot.setAttribute('aria-selected', index === currentDot);
+      });
+      
+      // Deshabilitar botones cuando corresponda
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex >= cards.length - visibleCards;
+    }
+    
+    function nextSlide() {
+      if (currentIndex < cards.length - visibleCards) {
+        currentIndex += visibleCards;
+        // Asegurarnos de no pasar el límite
+        if (currentIndex > cards.length - visibleCards) {
+          currentIndex = cards.length - visibleCards;
+        }
+        updateSlider();
+      }
+    }
+    
+    function prevSlide() {
+      if (currentIndex > 0) {
+        currentIndex -= visibleCards;
+        if (currentIndex < 0) currentIndex = 0;
+        updateSlider();
+      }
+    }
+    
+    function goToSlide(index) {
+      currentIndex = index;
+      updateSlider();
+    }
+    
+    // Event listeners
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Redimensionamiento de ventana
+    window.addEventListener('resize', function() {
+      const prevVisibleCards = visibleCards;
+      updateTotalSlides();
+      
+      // Ajustar currentIndex si es necesario
+      if (prevVisibleCards !== visibleCards) {
+        currentIndex = Math.floor(currentIndex / prevVisibleCards) * visibleCards;
+        if (currentIndex > cards.length - visibleCards) {
+          currentIndex = Math.max(0, cards.length - visibleCards);
+        }
+      }
+      
+      updateSlider();
+    });
+    
+    // Inicializar
+    updateTotalSlides();
+  });
