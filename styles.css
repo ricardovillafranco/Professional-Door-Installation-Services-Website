@@ -164,7 +164,13 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--dark-color);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo img {
+    width: 60px;
   }
   
   .nav-menu {
