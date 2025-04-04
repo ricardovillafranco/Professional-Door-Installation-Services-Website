@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jesseortizdoors.com/sitemap.xml

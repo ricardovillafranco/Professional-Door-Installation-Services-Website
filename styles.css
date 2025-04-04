@@ -550,13 +550,6 @@
   margin-right: 0; /* Sin margen en móvil */
 }
 
-/* Desktop: 2 cards */
-@media (min-width: 992px) {
-  .testimonial-card {
-    flex: 0 0 calc(50% - 1rem); /* 2 cards con espacio */
-    margin-right: 2rem; /* Espacio entre cards */
-  }
-}
 
 /* Resto de tus estilos (rating, author, etc.) se mantienen igual */
 .testimonial-rating {
@@ -652,18 +645,9 @@
   border-width: 0;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-  .testimonial-card {
-    min-width: calc(50% - 1rem);
-  }
-}
 
-@media (min-width: 1024px) {
-  .testimonial-card {
-    min-width: calc(33.333% - 1.333rem);
-  }
-}
+
+
   
   /* Contact Section */
   .contact-section {
@@ -745,7 +729,7 @@
     height: 100%;
   }
   
-  .form-group {
+  /* .form-group {
     position: relative;
     margin-bottom: 1.5rem;
   }
@@ -796,7 +780,7 @@
     background-repeat: no-repeat;
     background-position: right 1rem center;
     background-size: 1em;
-  }
+  } */
   
   /* Footer */
   .footer {
@@ -892,6 +876,12 @@
   }
   
   /* Responsive Styles */
+  /* Desktop: 2 cards */
+  @media (min-width: 1024px) {
+    .testimonial-card {
+      min-width: calc(33.333% - 1.333rem);
+    }
+  }
   @media (max-width: 992px) {
     .hero h1 {
       font-size: 2.8rem;
@@ -968,6 +958,9 @@
       width: 40px;
       height: 40px;
       font-size: 1.2rem;
+    }
+    .testimonial-card {
+      min-width: calc(50% - 1rem);
     }
   }
   
