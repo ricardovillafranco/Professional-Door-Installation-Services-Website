@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terms of service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Añadir Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #e67e22;
+      --primary-dark: #d35400;
+      --secondary-color: #2c3e50;
+      --light-color: #ecf0f1;
+      --dark-color: #2c3e50;
+      --text-color: #333;
+      --text-light: #7f8c8d;
+      --white: #fff;
+      --black: #000;
+      --gray: #95a5a6;
+      --light-gray: #f5f5f5;
+      --max-width: 1200px;
+      --border-radius: 8px;
+      --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: var(--light-gray);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Header Styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+    
+    .header.scrolled {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    
+    .logo a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo img {
+      width: 60px;
+    }
+    
+    .nav-menu {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-menu li {
+      margin-left: 2rem;
+    }
+    
+    .nav-menu a {
+      font-weight: 500;
+      color: var(--dark-color);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: var(--transition);
+    }
+    
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+    
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      width: 30px;
+      height: 20px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: var(--dark-color);
+      transition: var(--transition);
+    }
+    
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      padding: 100px 0 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .page {
+      width: 816px; /* 8.5 inches in pixels at 96dpi */
+      min-height: 1056px; /* 11 inches in pixels at 96dpi */
+      background-color: var(--white);
+      padding: 60px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-radius: var(--border-radius);
+    }
+
+    .page h1 {
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+    }
+
+    .page h2 {
+      font-size: 1.5rem;
+      color: var(--secondary-color);
+      margin-top: 30px;
+    }
+
+    .page p, .page ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .page ul {
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark-color);
+      color: var(--light-color);
+      padding: 4rem 0 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer h3, .footer h4 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .footer h4::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--primary-color);
+    }
+    
+    .footer p {
+      color: var(--gray);
+    }
+    
+    .footer ul li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer ul li a:hover {
+      color: var(--primary-color);
+    }
+    
+    .footer ul li i {
+      margin-right: 0.5rem;
+      color: var(--primary-color);
+      width: 20px;
+      text-align: center;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+    
+    .legal-links {
+      margin-top: 1rem;
+    }
+    
+    .legal-links a {
+      margin: 0 0.5rem;
+      color: var(--gray);
+    }
+    
+    .legal-links a:hover {
+      color: var(--primary-color);
+    }
+
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .page {
+        box-shadow: none;
+        border-radius: 0;
+        width: auto;
+        min-height: auto;
+        padding: 0;
+      }
+      .header, .footer {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        width: 100%;
+        padding: 40px;
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        transition: var(--transition);
+      }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .nav-menu li {
+        margin: 1.5rem 0;
+      }
+      
+      .page {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        padding: 20px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="/"><img src="./assets/jesse-ortiz-doors-no-text.svg" alt="Jesse Ortiz, door installation and repair expert logo">Jesse Ortiz</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#gallery">Gallery</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page">
+        <h1>Terms of service</h1>
+        <p>Last updated: April 4, 2025</p>
+
+        <p>This website does not collect any personal information from users. It only displays contact details such as phone number, address, and social media links.</p>
+
+        <h2>Cookies</h2>
+        <p>This website does not use any first-party or third-party cookies.</p>
+
+        <h2>Third-Party Links</h2>
+        <p>This website may contain links to social media platforms or other external websites. We are not responsible for the content or privacy practices of those websites.</p>
+
+        <h2>Contact</h2>
+        <p>If you have any questions about this policy, you can contact us at: <a href="mailto:jesseortiz.doors@gmail.com">jesseortiz.doors@gmail.com</a></p>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>Jesse Ortiz Door Services</h3>
+          <p>Providing quality door installation and repair services since 2010. Licensed, insured, and committed to excellence.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/people/Jesse-The-Door-Doctor/61564097489994/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" target="_blank" ><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@jesseortiz827" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#gallery">Gallery</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="/">Door Installation</a></li>
+            <li><a href="/">Door Repair</a></li>
+            <li><a href="/">Security Doors</a></li>
+            <li><a href="/">Commercial Doors</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-phone"></i> (626) 531-4793</li>
+            <li><i class="fas fa-envelope"></i> jesseortiz.doors@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 816 Old Ranch Rd<br>China Spring, TX 76633<br>United States</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2025</span> Jesse Ortiz Door Services. All Rights Reserved.</p>
+        <div class="legal-links">
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Año actual en el footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Menú hamburguesa
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    
+    // Header con scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
