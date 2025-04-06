@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {name: 'image44.webp', alt: 'Commercial sliding door'},
                 {name: 'image45.webp', alt: 'Commercial sliding door'},
                 {name: 'image46.webp', alt: 'Commercial sliding door'},
-                {name: 'image47.webp', alt: 'Commercial sliding door'},
+                
                 
 
             ];
