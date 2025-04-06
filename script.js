@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function loadCarouselImages() {
         try {
             const imageFiles = [
-                {name: 'image1.webp', alt: 'Residential door installation'},
+                {name: 'image29.webp', alt: 'Residential double doors installation'},
                 {name: 'image2.webp', alt: 'Commercial door installation'},
                 {name: 'image3.webp', alt: 'Elevator door lobby'},
                 {name: 'image4.webp', alt: 'Finish solid core door with a timely frame and a panic.'},
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {name: 'image26.webp', alt: 'Residential wood door with sidelights'},
                 {name: 'image27.webp', alt: 'Residential solid wood double doors'},
                 {name: 'image28.webp', alt: 'Commercial entry doors'},
-                {name: 'image29.webp', alt: 'Residential double doors installation'},
+                {name: 'image1.webp', alt: 'Residential door installation'},
                 {name: 'image30.webp', alt: 'Residential single door installation'},
                 {name: 'image31.webp', alt: 'Commercial entry door'},
                 {name: 'image32.webp', alt: 'Residential double doors installation.'},
