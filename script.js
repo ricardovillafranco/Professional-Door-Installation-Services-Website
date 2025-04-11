@@ -105,6 +105,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 {name: 'image44.webp', alt: 'Frame swing modification from a RH to a LH'},
                 {name: 'image45.webp', alt: 'Frame swing modification from a RH to a LH'},
                 {name: 'image46.webp', alt: 'Frame swing modification from a RH to a LH'},
+                {name: 'image47.webp', alt: 'Commercial hallow metal door'},
+                {name: 'image48.webp', alt: 'Hallow metal doors and frame pair'},
+                {name: 'image49.webp', alt: 'Storage hallow metal door'},
+                {name: 'image50.webp', alt: 'Commercial hallow metal door and frame'},
+                {name: 'image51.webp', alt: 'Commercial door frame and door'},
             ];
             
             if (this.carouselTrack) {
